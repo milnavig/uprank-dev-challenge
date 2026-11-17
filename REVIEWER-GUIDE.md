@@ -8,7 +8,7 @@ This is a local, read-only decision dashboard. All five required views and the c
 
 ## 1. Prepare the review
 
-Follow [README.md](README.md) for the exact setup: Node.js 22.12+, a running local Postgres through Docker Compose, the supplied API key in `.env`, then:
+Follow [README.md](README.md) for the exact setup: Node.js 22.17+, a running local Postgres through Docker Compose, the supplied API key in `.env`, then:
 
 ```text
 npm ci
@@ -82,6 +82,7 @@ Advertising history is **assumption-based**, not verified: A1 assumes `enabled_a
 npm run typecheck
 npm test
 npm run build
+npm audit
 ```
 
 All 60 tests run when the separate `TEST_DATABASE_URL` is configured as described in README. Otherwise the real-Postgres integration case is explicitly skipped and the other 59 run. The database case verifies run states, rollback and preserving the prior complete snapshot after failure. Synthetic domain fixtures cover date boundaries, returns, dirty joins, missing leads, cash/LTV and ads assumptions. Import tests exercise the actual pagination and bounded retry implementation with controlled responses.

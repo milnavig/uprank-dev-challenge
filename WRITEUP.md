@@ -40,6 +40,6 @@ The initial read-only exploration suggested 55 voluntary departures and 9 after 
 
 ## Verification and limits
 
-Literal synthetic fixtures exercise date boundaries, reactivation gaps, missing lead months, pooled money/LTV, contradictory owners, ranking and ads assumptions. Controlled transport responses exercise the real importer. A separate real local Postgres database exercises rollback, failure recording and reloading a previous snapshot. These checks complement, rather than replace, a real upstream import and browser verification.
+Tests use Node.js's built-in test runner and strict assertions, with the existing tsx loader for TypeScript. This avoids an additional test-framework dependency chain. Literal synthetic fixtures exercise date boundaries, reactivation gaps, missing lead months, pooled money/LTV, contradictory owners, ranking and ads assumptions. Controlled transport responses exercise the real importer. A separate real local Postgres database exercises rollback, failure recording and reloading a previous snapshot. These checks complement, rather than replace, a real upstream import and browser verification.
 
 This challenge targets one local read-only dashboard. Authentication, public hosting, upstream mutations, future LTV prediction and causal inference are outside scope. The upstream key stays on the server and is supplied through the local environment.
