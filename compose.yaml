@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    network_mode: bridge
+    environment:
+      POSTGRES_USER: uprank
+      POSTGRES_PASSWORD: uprank_local_only
+      POSTGRES_DB: uprank_challenge
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - challenge_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U uprank -d uprank_challenge"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  challenge_postgres:

@@ -1,0 +1,39 @@
+{
+  "name": "uprank-decision-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:init": "tsx scripts/db-init.ts",
+    "data:import": "tsx scripts/import-data.ts"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "pg": "^8.16.3",
+    "dotenv": "^17.2.3",
+    "lucide-react": "^0.468.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1",
+    "class-variance-authority": "^0.7.1",
+    "@radix-ui/react-slot": "^1.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/pg": "^8.15.6",
+    "tailwindcss": "^4.1.17",
+    "@tailwindcss/postcss": "^4.1.17",
+    "vitest": "5.1.0",
+    "tsx": "^4.20.6"
+  },
+  "engines": { "node": ">=22.12.0" }
+}
